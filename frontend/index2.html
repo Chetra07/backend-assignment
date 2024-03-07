@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Slider</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <section style="background-color: var(--colors-green-light);">
+        <!-- btn scroll up -->
+        <button id="scrollButton"><i class="fa-solid fa-chevron-up"></i></button>
+        <div id="slider-container" class="main-home-page container-xxl slider-container">
+            <div class="slider"></div>
+            <!-- Navigation buttons -->
+            <div class="slider-nav">
+                <button id="prevBtn"><i class="fa-solid fa-chevron-left"></i></button>
+                <button id="nextBtn"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+            <!-- Dots for navigation -->
+            <div class="main-dot">
+                <div class="slider-dots "></div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+       document.addEventListener("DOMContentLoaded", function () {
+            const slider = document.querySelector(".slider");
+            const dotsContainer = document.querySelector(".slider-dots");
+
+            fetch("http://localhost/web-assignment-main/backend/api/product/fetch_slider.php")
+                .then(response => response.json())
+                .then(data => {
+                    const products = data.product;
+
+                    products.forEach(product => {
+                        const slide = document.createElement("div");
+                        slide.classList.add("slide");
+                        slide.innerHTML = `
+                            <div class="text-main-home-page">
+                                <h1>${product.pro_name}</h1>
+                                <h6>${product.pro_cal} Calories</h6>
+                                <p>${product.pro_des}</p>
+                                <a href="./pages/detail-products/detail-product.html" class="btn-buy-now-slide">Buy Now</a>
+                            </div>
+                            <div class="img-main-home-page">
+                                <img src="http://localhost/web-assignment-main/backend/api/image/${product.pro_img}" alt="${product.pro_name}" />
+                            </div>
+                        `;
+                        slider.appendChild(slide);
+
+                        // Create a dot for each slide
+                        const dot = document.createElement("span");
+                        dot.classList.add("dot");
+                        dot.addEventListener("click", () => goToSlide(index));
+                        dotsContainer.appendChild(dot);
+                    });
+
+                    const slides = document.querySelectorAll(".slide");
+                    const dots = document.querySelectorAll(".dot");
+                    const prevBtn = document.getElementById("prevBtn");
+                    const nextBtn = document.getElementById("nextBtn");
+
+                    dots[0].classList.add("active");
+
+                    // Event listeners for navigation buttons
+                    prevBtn.addEventListener("click", () => goToSlide(index - 1));
+                    nextBtn.addEventListener("click", () => goToSlide(index + 1));
+
+                    // Autoplay functionality
+                    setInterval(() => {
+                        goToSlide(index + 1);
+                    }, 8000); // Adjust the interval (in milliseconds) as needed
+
+                    let index = 0;
+
+                    function goToSlide(i) {
+                        if (i < 0) {
+                            index = slides.length - 1;
+                        } else if (i >= slides.length) {
+                            index = 0;
+                        } else {
+                            index = i;
+                        }
+
+                        // Update the transform property to show the correct slide
+                        slider.style.transform = `translateX(${-index * 100}%)`;
+
+                        // Update the active dot
+                        dots.forEach((dot, i) => {
+                            dot.classList.toggle("active", index === i);
+                        });
+                    }
+                })
+                .catch(error => console.error("Error fetching data:", error));
+        });
+    </script>
+</body>
+</html>

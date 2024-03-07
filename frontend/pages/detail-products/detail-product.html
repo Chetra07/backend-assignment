@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Add Bootstrap CSS  & font awesome & google font  --- start  --- -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Sofia"
+    />
+    <!--                          ---  end  ---                          -->
+    <!-- import css for style Navbar -->
+    <link rel="stylesheet" href="../../index.css" />
+    <!-- import css for Page popular -->
+    <link rel="stylesheet" href="./detail-product.css" />
+    <!-- Set the favicon -->
+    <link
+      rel="icon"
+      href="../../public/images/logo-starbuck.png"
+      type="image/logo-icon"
+    />
+    <link
+      rel="shortcut icon"
+      href="../../public/images/logo-starbuck.png"
+      type="image/x-icon"
+    />
+    <title>Page_Popular</title>
+  </head>
+  <body>
+    <nav class="mainNav">
+      <div class="container">
+        <div class="navbar">
+          <div>
+            <!-- dropDown -->
+            <div class="custom-dropdown">
+              <button class="custom-btn" id="customDropdownButton">
+                <i class="fa-solid fa-bars dropbtn"></i>
+              </button>
+              <div class="custom-dropdown-content" id="customDropdownContent">
+                <a class="active" href="../../index.html">Home</a>
+                <a href="../discount/discount.html">Discount</a>
+                <a href="../popular/popular.html">Popular</a>
+                <a href="../contact/contact.html">Contact_Us</a>
+              </div>
+            </div>
+            <!-- link  -->
+            <div class="linkNav">
+              <a class="active" href="../../index.html">Home</a>
+              <a href="../discount/discount.html">Discount</a>
+              <a href="../popular/popular.html">Popular</a>
+              <a href="../contact/contact.html">Contact_Us</a>
+            </div>
+          </div>
+          <div>
+            <!-- Logo Navbar-->
+            <div class="logoNav">
+              <img
+                src="../../public/images/logo-starbuck.png"
+                width="85px"
+                alt=""
+              />
+            </div>
+          </div>
+          <div>
+            <!-- search -->
+            <div class="searchNav">
+              <form class="btnSearch">
+                <input class="search" type="search" placeholder="Search" />
+                <a href="#"
+                  ><img
+                    src="../../public/icons/search-icon.png"
+                    width="21px"
+                    alt=""
+                /></a>
+              </form>
+              <div class="btnShop">
+                <a href="#"
+                  ><img
+                    src="../../public/icons/shop-icon.png"
+                    width="21px"
+                    alt=""
+                /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- slider product -->
+    <section>
+      <div class="container detail-main">
+        <div class="left-img">
+          <img src="../../public/images/slid-starbuck2.png" alt="" />
+        </div>
+        <div class="right-text">
+          <h1>Caramel Frappuccino Blended Beverage</h1>
+          <p>390 Calories</p>
+          <div class="set-img-size">
+            <div class="img-size-small" onclick="changeColor(this)">
+              <div class="small-img">
+                <img
+                  src="../../public/icons/size-of-cup-icon.png"
+                  width="30"
+                  height="40"
+                  alt=""
+                />
+              </div>
+              <div class="small-text">small</div>
+            </div>
+            <div class="img-size-small" onclick="changeColor(this)">
+              <div class="small-img">
+                <img
+                  src="../../public/icons/size-of-cup-icon.png"
+                  width="40"
+                  height="50"
+                  alt=""
+                />
+              </div>
+              <div class="small-text">medium</div>
+            </div>
+            <div class="img-size-small" onclick="changeColor(this)">
+              <div class="small-img">
+                <img
+                  src="../../public/icons/size-of-cup-icon.png"
+                  width="50"
+                  height="60"
+                  alt=""
+                />
+              </div>
+              <div class="small-text">large</div>
+            </div>
+          </div>
+
+          <div class="text-price-count">
+            <p class="text-price">1.70$</p>
+            <div class="qty">
+              <div class="minus" onclick="decrement()">-</div>
+              <input
+                type="number"
+                class="count"
+                name="qty"
+                value="1"
+                id="quantity"
+              />
+              <div class="minus" onclick="increment()">+</div>
+            </div>
+          </div>
+          <div class="mt-5">
+            <a class="btn-add-to-card" onclick="alert('Buy Now!');"
+              >add to card <i class="fa-solid fa-cart-shopping"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER FEATURE -->
+    <footer>
+      <div class="footerMain">
+        <div class="footerSub">
+          <div class="frame">
+            <img
+              class="brand-logo"
+              src="../../public/images/logo-starbuck.png"
+            />
+            <div class="div">
+              <div class="div-2">
+                <div class="shop"><div class="text-wrapper">Home</div></div>
+                <div class="popular">
+                  <div class="text-wrapper">Popular</div>
+                </div>
+                <div class="our-product">
+                  <div class="text-wrapper">Discount</div>
+                </div>
+                <div class="contact-us">
+                  <div class="text-wrapper">Contact Us</div>
+                </div>
+              </div>
+              <div class="div-3">
+                <img class="img" src="../../public/icons/facebook-icon.png" />
+                <img class="img" src="../../public/icons/instagram-icon.png" />
+                <img class="img" src="../../public/icons/pinterest-icon.png" />
+                <img class="img" src="../../public/icons/twitter-icon.png" />
+                <img class="img" src="../../public/icons/telegram-icon.png" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-footer">
+        <p class="text-wrapper">
+          Copyright © 2023 StarBuckWeb. All rights reserved.
+        </p>
+      </div>
+    </footer>
+    <!-- import javascript -->
+    <script src="./detail-product.js"></script>
+  </body>
+</html>

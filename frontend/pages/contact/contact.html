@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Add Bootstrap CSS  & font awesome & google font  --- start  --- -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Sofia"
+    />
+    <!--                          ---  end  ---                          -->
+    <!-- import css for style Navbar -->
+    <link rel="stylesheet" href="../../index.css" />
+    <!-- import css for Page popular -->
+    <link rel="stylesheet" href="./discount.css" />
+    <link rel="stylesheet" href="./contact.css">
+     <!-- Set the favicon -->
+    <link
+      rel="icon"
+      href="../../public/images/logo-starbuck.png"
+      type="image/logo-icon"
+    />
+    <link
+      rel="shortcut icon"
+      href="../../public/images/logo-starbuck.png"
+      type="image/x-icon"
+    />
+    <title>Page_Discount</title>
+  </head>
+  <body>
+    <nav class="mainNav">
+      <div class="container">
+        <div class="navbar">
+          <div>
+            <!-- dropDown -->
+            <div class="custom-dropdown">
+              <button class="custom-btn" id="customDropdownButton">
+                <i class="fa-solid fa-bars dropbtn"></i>
+              </button>
+              <div class="custom-dropdown-content" id="customDropdownContent">
+                <a href="../../index.html">Home</a>
+                <a href="../discount/discount.html">Discount</a>
+                <a href="../popular/popular.html">Popular</a>
+                <a class="actions" href="#">Contact_Us</a>
+              </div>
+            </div>
+            <!-- link  -->
+            <div class="linkNav">
+              <a href="../../index.html">Home</a>
+              <a href="../discount/discount.html">Discount</a>
+              <a href="../popular/popular.html">Popular</a>
+              <a class="active" href="#">Contact_Us</a>
+            </div>
+          </div>
+          <div>
+            <!-- Logo Navbar-->
+            <div class="logoNav">
+              <img src="../../public/images/logo-starbuck.png" width="85px" alt="" />
+            </div>
+          </div>
+          <div>
+            <!-- search -->
+            <div class="searchNav">
+              <form class="btnSearch">
+                <input class="search" type="search" placeholder="Search" />
+                <a href="#"
+                  ><img src="../../public/icons/search-icon.png" width="21px" alt=""
+                /></a>
+              </form>
+              <div class="btnShop">
+                <a href="#"
+                  ><img
+                    src="../../public/icons/shop-icon.png"
+                    width="21px"
+                    alt=""
+                /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+   
+ <!-- Get in touch with Us -->
+ <section>
+  <div class="background-contact" >
+    <div class="container">
+        <div class="row justify-content-center flex-column-reverse flex-md-row">
+            <div class="col-md-6 col-sm-12 order-1 order-md-1">
+                <div class="form-container">
+                    <h1 class="info-text">Get in touch with us</h1>
+                    <p class="description-get-touch-withus">Feel free to contact us any time. We will get
+                        back to you as soon as we can!</p>
+                    <form>
+                        <div class="form-group">
+                            <input  type="text" class="form-style " id="name" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-style" id="email" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" class="form-style" rows="4" placeholder="Message"></textarea>
+                        </div>
+                        <div>
+                            <input type="submit" value="Send">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12 order-2 order-md-2">
+              <div class="contact-container">
+                <h4 class="contact-text-info">Info</h4>
+                <div class="info-style">
+                  <i class="fa-regular fa-envelope icon-info"></i>
+                  <p class="info-text-style">starbuckweb@gmail.com</p>
+                </div>
+                <div class="info-style">
+                  <i class="fa-solid fa-phone icon-info"></i>
+                  <p class="info-text-style">+885 86802446</p>
+                </div>
+                <div class="info-style">
+                  <i class="fa-regular fa-clock icon-info"></i>
+                  <p class="info-text-style">08:00 - 5:30</p>
+                </div>
+                <div class="info-style">
+                  <i class="fa-solid fa-location-dot icon-info"></i>
+                  <p class="info-text-style">Khan Dangkor, Sangkat Dangkor, Phnom  Penh</p>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+    <!-- FOOTER FEATURE -->
+    <footer>
+      <div class="footerMain">
+        <div class="footerSub">
+          <div class="frame">
+            <img class="brand-logo" src="../../public/images/logo-starbuck.png" />
+            <div class="div">
+              <div class="div-2">
+                <div class="shop"><div class="text-wrapper">Home</div></div>
+                <div class="popular">
+                  <div class="text-wrapper">Popular</div>
+                </div>
+                <div class="our-product">
+                  <div class="text-wrapper">Discount</div>
+                </div>
+                <div class="contact-us">
+                  <div class="text-wrapper">Contact Us</div>
+                </div>
+              </div>
+              <div class="div-3">
+                <img class="img" src="../../public/icons/facebook-icon.png" />
+                <img class="img" src="../../public/icons/instagram-icon.png" />
+                <img class="img" src="../../public/icons/pinterest-icon.png" />
+                <img class="img" src="../../public/icons/twitter-icon.png" />
+                <img class="img" src="../../public/icons/telegram-icon.png" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-footer">
+        <p class="text-wrapper">
+          Copyright © 2023 StarBuckWeb. All rights reserved.
+        </p>
+      </div>
+    </footer>
+    <!-- import javascript -->
+    <script src="./contact.js"></script>
+  </body>
+</html>

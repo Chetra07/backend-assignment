@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Add Bootstrap CSS  & font awesome & google font  --- start  --- -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Sofia"
+    />
+    <!-- Add Bootstrap CSS  & font awesome & google font  --- end  --- -->
+    <!-- Your custom CSS -->
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="./global.css" />
+     <!-- Set the favicon -->
+    <link rel="icon" href="./public/images/logo-starbuck.png" type="image/logo-icon">
+    <link rel="shortcut icon" href="./public/images/logo-starbuck.png" type="image/x-icon">
+    <title>web_assignment</title>
+  </head>
+  <body>
+    <nav class="mainNav">
+      <div class="container">
+        <div class="navbar">
+          <div>
+            <!-- dropDown -->
+            <div class="custom-dropdown">
+              <button class="custom-btn" id="customDropdownButton">
+                <i class="fa-solid fa-bars dropbtn"></i>
+              </button>
+              <div class="custom-dropdown-content" id="customDropdownContent">
+                <a class="actions" href="#">Home</a>
+                <a href="./pages/discount/discount.html">Discount</a>
+                <a href="./pages/popular/popular.html">Popular</a>
+                <a href="./pages/contact/contact.html">Contact_Us</a>
+              </div>
+            </div>
+            <!-- link  -->
+            <div class="linkNav">
+              <a class="active" href="#">Home</a>
+              <a href="./pages/discount/discount.html">Discount</a>
+              <a href="./pages/popular/popular.html">Popular</a>
+              <a href="./pages/contact/contact.html">Contact_Us</a>
+            </div>
+          </div>
+          <div>
+            <!-- logo -->
+            <div class="logoNav">
+              <img
+                src="./public/images/logo-starbuck.png"
+                width="85px"
+                alt=""
+              />
+            </div>
+          </div>
+          <div>
+            <!-- search -->
+            <div class="searchNav">
+              <form class="btnSearch">
+                <input class="search" type="search" placeholder="Search" />
+                <a href="#"
+                  ><img
+                    src="./public/icons/search-icon.png"
+                    width="21px"
+                    alt=""
+                /></a>
+              </form>
+              <div class="btnShop">
+                <a href="#"
+                  ><img
+                    src="../frontend/public/icons/shop-icon.png"
+                    width="18px"
+                    alt=""
+                /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- home Page -->
+    <section  style="background-color: var(--colors-green-light) ; ">
+      <!-- btn scroll up -->
+      <button id="scrollButton"><i class="fa-solid fa-chevron-up"></i></button>
+     <div id="slider-container" class="main-home-page container-xxl" >
+      <div class="slider">
+        <!-- slide 1 -->
+        <div class="slide ">
+          <div class="text-main-home-page">
+          <h1>Mocha Cookie <br>Crumble Frappuccino</h1>
+          <h6>390 Calories</h6>
+          <p>Frappuccino Roast coffee, mocha sauce and Frappuccino 
+            chips blended with milk and ice, layered on top of whipped 
+            cream and chocolate cookie crumble and topped with vanilla 
+            whipped cream,</p>
+               <a href="./pages/detail-products/detail-product.html" class="btn-buy-now-slide">Buy Now</a>
+          </div>
+          <div class="img-main-home-page ">
+            <img src="../frontend/public/images/startbuck-home-page1.png" alt="">
+          </div>
+        </div>
+         <!-- slide 1 -->
+        <div class="slide ">
+          <div class="text-main-home-page">
+          <h1>Strawberry Frappuccino <br> Blended Beverage</h1>
+          <h6>390 Calories</h6>
+          <p>Caramel syrup meets coffee, milk and ice for a 
+            rendezvous in the blender, while whipped cream 
+            and buttery caramel sauce layer the love on top.</p>
+               <a href="./pages/detail-products/detail-product.html" class="btn-buy-now-slide">Buy Now</a>
+          </div>
+          <div class="img-main-home-page">
+            <img src="../frontend/public/images/startbuck-home-page2.png" alt="">
+          </div>
+        </div>
+         <!-- slide 1 -->
+        <div class="slide ">
+          <div class="text-main-home-page">
+          <h1>chocolate Frappuccino <br> Blended Beverage</h1>
+          <h6>390 Calories</h6>
+          <p> milk and ice for a rendezvous in the blender, 
+            while whipped cream and buttery caramel sauce 
+            layer the love on top.</p>
+               <a href="./pages/detail-products/detail-product.html" class="btn-buy-now-slide">Buy Now</a>
+          </div>
+          <div class="img-main-home-page">
+            <img src="../frontend/public/images/startbuck-home-page3.png" alt="">
+          </div>
+        </div>
+         <!-- slide 1 -->
+        <div class="slide ">
+          <div class="text-main-home-page">
+          <h1>Caramel Frappuccino <br> Blended Beverage</h1>
+          <h6>390 Calories</h6>
+          <p>Buttery caramel syrup blended with coffee, 
+            milk and ice, then topped with a layer of 
+            dark caramel sauce, whipped cream, caramel 
+            drizzle and a crunchy caramel-sugar topping</p>
+               <a href="./pages/detail-products/detail-product.html" class="btn-buy-now-slide">Buy Now</a>
+          </div>
+          <div class="img-main-home-page">
+            <img src="../frontend/public/images/startbuck-home-page4.png" alt="">
+          </div>
+        </div>
+        <!-- You can add more slides with the same structure as above -->
+     </div>
+        <!-- end of slide --> 
+         <!-- Navigation buttons -->
+      <div class="slider-nav">
+        <button id="prevBtn"><i class="fa-solid fa-chevron-left"></i></button>
+        <button id="nextBtn"><i class="fa-solid fa-chevron-right"></i></button>
+      </div>
+      <!-- Dots for navigation -->
+      <div class="main-dot">
+        <div class="slider-dots "></div>
+      </div>
+    </section>
+
+    <!-- Popular Product -->
+    <!-- <section style="padding-top: 50px;">
+      <div class="container container-popular-products">
+        <div class="popular-products">
+          <h2>Popular Products</h2>
+          <div class="box">
+            <img
+              class="vector"
+              src="../frontend/public/images/vector-popular-products.png"
+              alt="vector under Popular Products"
+            />
+          </div>
+        </div>
+
+        
+        <div class="row row-style">
+          <div class="col-sm-12 col-md-4 col-lg-3" style="padding-top: 30px">
+            <div class="product-card">
+              <div class="discount">
+                <p class="discount-text">40% OFF</p>
+              </div>
+              <div class="heart-icon">
+                <i class="far fa-heart like-btn"></i>
+              </div>
+            <a class="product-card-link" href="../frontend/pages/detail-products/detail-product.html">
+              <img
+                class="cart-image"
+                src="../frontend/public/images/starbuck1.png"
+                alt="Starbucks Drink"
+              />
+              <h3>Product Name</h3>
+              <p>350 Calories</p>
+              <h4>7.90$</h4>
+            </a>
+              <div class="add-to-cart">
+                <i class="icon fa-solid fa-cart-shopping"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-4 col-lg-3" style="padding-top: 30px">
+            <div class="product-card">
+              <div class="discount">
+                <p class="discount-text">40% OFF</p>
+              </div>
+              <div class="heart-icon">
+                <i class="far fa-heart like-btn"></i>
+              </div>
+              <a class="product-card-link" href="../frontend/pages/detail-products/detail-product.html">
+                <img
+                  class="cart-image"
+                  src="../frontend/public/images/starbuck2.png"
+                  alt="Starbucks Drink"
+                />
+                <h3>Product Name</h3>
+                <p>350 Calories</p>
+                <h4>7.90$</h4>
+                <div class="add-to-cart">
+                  <i class="icon fa-solid fa-cart-shopping"></i>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-4 col-lg-3" style="padding-top: 30px">
+            <div class="product-card">
+              <div class="discount">
+                <p class="discount-text">40% OFF</p>
+              </div>
+              <div class="heart-icon">
+                <i class="far fa-heart like-btn"></i>
+              </div>
+              <a class="product-card-link" href="../frontend/pages/detail-products/detail-product.html">
+                <img
+                  class="cart-image"
+                  src="../frontend/public/images/starbuck4.png"
+                  alt="Starbucks Drink"
+                />
+                <h3>Product Name</h3>
+                <p>350 Calories</p>
+                <h4>7.90$</h4>
+              </a>
+                <div class="add-to-cart">
+                  <i class="icon fa-solid fa-cart-shopping"></i>
+                </div>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-4 col-lg-3" style="padding-top: 30px">
+            <div class="product-card">
+              <div class="discount">
+                <p class="discount-text">40% OFF</p>
+              </div>
+              <div class="heart-icon">
+                <i class="far fa-heart like-btn"></i>
+              </div>
+              <a class="product-card-link" href="../frontend/pages/detail-products/detail-product.html">
+                <img
+                  class="cart-image"
+                  src="../frontend/public/images/starbuck3.png"
+                  alt="Starbucks Drink"
+                />
+                <h3>Product Name</h3>
+                <p>350 Calories</p>
+                <h4>7.90$</h4>
+              </a>
+                <div class="add-to-cart">
+                  <i class="icon fa-solid fa-cart-shopping"></i>
+                </div>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-4 col-lg-3" style="padding-top: 30px">
+            <div class="product-card">
+              <div class="discount">
+                <p class="discount-text">40% OFF</p>
+              </div>
+              <div class="heart-icon">
+                <i class="far fa-heart like-btn"></i>
+              </div>
+              <a class="product-card-link" href="../frontend/pages/detail-products/detail-product.html">
+                <img
+                  class="cart-image"
+                  src="../frontend/public/images/starbuck5.png"
+                  alt="Starbucks Drink"
+                />
+                <h3>Product Name</h3>
+                <p>350 Calories</p>
+                <h4>7.90$</h4>
+              </a>
+                <div class="add-to-cart">
+                  <i class="icon fa-solid fa-cart-shopping"></i>
+                </div>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-4 col-lg-3" style="padding-top: 30px">
+            <div class="product-card">
+              <div class="discount">
+                <p class="discount-text">40% OFF</p>
+              </div>
+              <div class="heart-icon">
+                <i class="far fa-heart like-btn"></i>
+              </div>
+              <a class="product-card-link" href="../frontend/pages/detail-products/detail-product.html">
+                <img
+                  class="cart-image"
+                  src="../frontend/public/images/starbuck6.png"
+                  alt="Starbucks Drink"
+                />
+                <h3>Product Name</h3>
+                <p>350 Calories</p>
+                <h4>7.90$</h4>
+              </a>
+                <div class="add-to-cart">
+                  <i class="icon fa-solid fa-cart-shopping"></i>
+                </div>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-4 col-lg-3" style="padding-top: 30px">
+            <div class="product-card">
+              <div class="discount">
+                <p class="discount-text">40% OFF</p>
+              </div>
+              <div class="heart-icon">
+                <i class="far fa-heart like-btn"></i>
+              </div>
+              <a class="product-card-link" href="../frontend/pages/detail-products/detail-product.html">
+                <img
+                  class="cart-image"
+                  src="../frontend/public/images/starbuck7.png"
+                  alt="Starbucks Drink"
+                />
+                <h3>Product Name</h3>
+                <p>350 Calories</p>
+                <h4>7.90$</h4>
+              </a>
+                <div class="add-to-cart">
+                  <i class="icon fa-solid fa-cart-shopping"></i>
+                </div>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-4 col-lg-3" style="padding-top: 30px">
+            <div class="product-card">
+              <div class="discount">
+                <p class="discount-text">40% OFF</p>
+              </div>
+              <div class="heart-icon">
+                <i class="far fa-heart like-btn"></i>
+              </div>
+              <a class="product-card-link" href="../frontend/pages/detail-products/detail-product.html">
+                <img
+                  class="cart-image"
+                  src="../frontend/public/images/starbuck8.png"
+                  alt="Starbucks Drink"
+                />
+                <h3>Product Name</h3>
+                <p>350 Calories</p>
+                <h4>7.90$</h4>
+              </a>
+                <div class="add-to-cart">
+                  <i class="icon fa-solid fa-cart-shopping"></i>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+
+
+    <section style="padding-top: 50px;">
+      <div class="container container-popular-products">
+          <div class="popular-products">
+              <h2>Popular Products</h2>
+              <div class="box">
+                  <img class="vector" src="../frontend/public/images/vector-popular-products.png" alt="vector under Popular Products" />
+              </div>
+          </div>
+          <div class="row row-style" id="productContainer">
+              <!-- Product cards will be dynamically added here -->
+          </div>
+      </div>
+  </section>
+    
+    <!-- Discount Products -->
+    <section>
+      <div class="container">
+        <div class="popular-products">
+          <h2>Discount Products</h2>
+          <div class="box_discount">
+            <img
+              class="vector_discount"
+              src="../frontend/public/images/vector-popular-products.png"
+              alt="vector under Popular Products"
+            />
+          </div>
+        </div>
+        <div class="row row-style">
+          <div class="col-sm-12 col-md-4 col-lg-3" style="padding-top: 30px">
+            <div class="product-card">
+              <a class="product-card-link" href="../frontend/pages/detail-products/detail-product.html">
+                <div class="discount">
+                  <p class="discount-text">40% OFF</p>
+                </div>
+                <div class="heart-icon">
+                  <i class="far fa-heart like-btn"></i>
+                </div>
+                <img
+                  class="cart-image"
+                  src="../frontend/public/images/starbuck1.png"
+                  alt="Starbucks Drink"
+                />
+                <h3>Product Name</h3>
+                <p>350 Calories</p>
+                <h4>7.90$</h4>
+                <div class="add-to-cart">
+                  <i class="icon fa-solid fa-cart-shopping"></i>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-4 col-lg-3" style="padding-top: 30px">
+            <div class="product-card">
+              <a class="product-card-link" href="../frontend/pages/detail-products/detail-product.html">
+                <div class="discount">
+                  <p class="discount-text">40% OFF</p>
+                </div>
+                <div class="heart-icon">
+                  <i class="far fa-heart like-btn"></i>
+                </div>
+                <img
+                  class="cart-image"
+                  src="../frontend/public/images/starbuck2.png"
+                  alt="Starbucks Drink"
+                />
+                <h3>Product Name</h3>
+                <p>350 Calories</p>
+                <h4>7.90$</h4>
+                <div class="add-to-cart">
+                  <i class="icon fa-solid fa-cart-shopping"></i>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-4 col-lg-3" style="padding-top: 30px">
+            <div class="product-card">
+              <a class="product-card-link" href="../frontend/pages/detail-products/detail-product.html">
+                <div class="discount">
+                  <p class="discount-text">40% OFF</p>
+                </div>
+                <div class="heart-icon">
+                  <i class="far fa-heart like-btn"></i>
+                </div>
+                <img
+                  class="cart-image"
+                  src="../frontend/public/images/starbuck4.png"
+                  alt="Starbucks Drink"
+                />
+                <h3>Product Name</h3>
+                <p>350 Calories</p>
+                <h4>7.90$</h4>
+                <div class="add-to-cart">
+                  <i class="icon fa-solid fa-cart-shopping"></i>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-4 col-lg-3" style="padding-top: 30px">
+            <div class="product-card">
+              <a class="product-card-link" href="../frontend/pages/detail-products/detail-product.html">
+                <div class="discount">
+                  <p class="discount-text">40% OFF</p>
+                </div>
+                <div class="heart-icon">
+                  <i class="far fa-heart like-btn"></i>
+                </div>
+                <img
+                  class="cart-image"
+                  src="../frontend/public/images/starbuck3.png"
+                  alt="Starbucks Drink"
+                />
+                <h3>Product Name</h3>
+                <p>350 Calories</p>
+                <h4>7.90$</h4>
+                <div class="add-to-cart">
+                  <i class="icon fa-solid fa-cart-shopping"></i>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-4 col-lg-3" style="padding-top: 30px">
+            <div class="product-card">
+              <a class="product-card-link" href="../frontend/pages/detail-products/detail-product.html">
+                <div class="discount">
+                  <p class="discount-text">40% OFF</p>
+                </div>
+                <div class="heart-icon">
+                  <i class="far fa-heart like-btn"></i>
+                </div>
+                <img
+                  class="cart-image"
+                  src="../frontend/public/images/starbuck5.png"
+                  alt="Starbucks Drink"
+                />
+                <h3>Product Name</h3>
+                <p>350 Calories</p>
+                <h4>7.90$</h4>
+                <div class="add-to-cart">
+                  <i class="icon fa-solid fa-cart-shopping"></i>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-4 col-lg-3" style="padding-top: 30px">
+            <div class="product-card">
+              <a class="product-card-link" href="../frontend/pages/detail-products/detail-product.html">
+                <div class="discount">
+                  <p class="discount-text">40% OFF</p>
+                </div>
+                <div class="heart-icon">
+                  <i class="far fa-heart like-btn"></i>
+                </div>
+                <img
+                  class="cart-image"
+                  src="../frontend/public/images/starbuck6.png"
+                  alt="Starbucks Drink"
+                />
+                <h3>Product Name</h3>
+                <p>350 Calories</p>
+                <h4>7.90$</h4>
+                <div class="add-to-cart">
+                  <i class="icon fa-solid fa-cart-shopping"></i>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-4 col-lg-3" style="padding-top: 30px">
+            <div class="product-card">
+              <a class="product-card-link" href="../frontend/pages/detail-products/detail-product.html">
+                <div class="discount">
+                  <p class="discount-text">40% OFF</p>
+                </div>
+                <div class="heart-icon">
+                  <i class="far fa-heart like-btn"></i>
+                </div>
+                <img
+                  class="cart-image"
+                  src="../frontend/public/images/starbuck7.png"
+                  alt="Starbucks Drink"
+                />
+                <h3>Product Name</h3>
+                <p>350 Calories</p>
+                <h4>7.90$</h4>
+                <div class="add-to-cart">
+                  <i class="icon fa-solid fa-cart-shopping"></i>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-4 col-lg-3" style="padding-top: 30px">
+            <div class="product-card">
+              <a class="product-card-link" href="../frontend/pages/detail-products/detail-product.html">
+                <div class="discount">
+                  <p class="discount-text">40% OFF</p>
+                </div>
+                <div class="heart-icon">
+                  <i class="far fa-heart like-btn"></i>
+                </div>
+                <img
+                  class="cart-image"
+                  src="../frontend/public/images/starbuck8.png"
+                  alt="Starbucks Drink"
+                />
+                <h3>Product Name</h3>
+                <p>350 Calories</p>
+                <h4>7.90$</h4>
+                <div class="add-to-cart">
+                  <i class="icon fa-solid fa-cart-shopping"></i>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detail Green Tea -->
+    <section>
+      <section>
+        <div class="container" style="overflow: hidden">
+          <div class="greenTeaDetail">
+            <div class="green-tea-img">
+              <img
+                src="./public/images/ice-green-tea1.png"
+                alt="ice-green-tea1"
+              />
+            </div>
+            <div class="text-green-tea">
+              <div class="text-title">
+                <h1>ICE GREEN TEA</h1>
+                <div class="text-price">
+                  <h3 class="underline-price">12.90$</h3>
+                  <h3>10.90$</h3>
+                </div>
+              </div>
+              <p class="green-tea-text-p">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
+                nam iure harum nobis sed consequuntur molestias tempore
+                voluptate! Reprehenderit aut fugiat vel temporibus qui similique
+                architecto, sint molestiae ad natus!
+              </p>
+              <div class="custom-btn-buy-now">
+                <a href="./pages/detail-products/detail-product.html" class="btn-buy-now-text"> Buy&nbsp;&nbsp;Now </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+    <!-- Detail Green Tea 2 -->
+    <section>
+      <section>
+        <div class="container">
+          <div class="greenTeaDetail revert-green-tea2">
+            <div class="text-green-tea">
+              <div class="text-title">
+                <h1>ICE GREEN TEA</h1>
+                <div class="text-price">
+                  <h3 class="underline-price">12.90$</h3>
+                  <h3>10.90$</h3>
+                </div>
+              </div>
+              <p class="green-tea-text-p">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
+                nam iure harum nobis sed consequuntur molestias tempore
+                voluptate! Reprehenderit aut fugiat vel temporibus qui similique
+                architecto, sint molestiae ad natus!
+              </p>
+              <div class="custom-btn-buy-now">
+                <a href="./pages/detail-products/detail-product.html" class="btn-buy-now-text"> Buy&nbsp;&nbsp;Now </a>
+              </div>
+            </div>
+            <div class="green-tea-img">
+              <img
+                src="./public/images/ice-green-tea1.png"
+                alt="ice-green-tea1"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+    <!-- Get in touch with Us -->
+    <section>
+      <div class="background">
+        <div class="container">
+            <div class="row justify-content-center flex-column-reverse flex-md-row">
+                <div class="col-md-6 col-sm-12 order-1 order-md-1">
+                    <div class="form-container">
+                        <h1 class="info-text">Get in touch with us</h1>
+                        <p class="description-get-touch-withus">Feel free to contact us any time. We will get
+                            back to you as soon as we can!</p>
+                        <form>
+                            <div class="form-group">
+                                <input type="text" class="form-style" id="name" placeholder="Name">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-style" id="email" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <textarea id="message" class="form-style" rows="4" placeholder="Message"></textarea>
+                            </div>
+                            <div>
+                                <input type="submit" value="Send">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12 order-2 order-md-2">
+                  <div class="contact-container">
+                    <h4 class="contact-text-info">Info</h4>
+                    <div class="info-style">
+                      <i class="fa-regular fa-envelope icon-info"></i>
+                      <p class="info-text-style">starbuckweb@gmail.com</p>
+                    </div>
+                    <div class="info-style">
+                      <i class="fa-solid fa-phone icon-info"></i>
+                      <p class="info-text-style">+885 86802446</p>
+                    </div>
+                    <div class="info-style">
+                      <i class="fa-regular fa-clock icon-info"></i>
+                      <p class="info-text-style">08:00 - 5:30</p>
+                    </div>
+                    <div class="info-style">
+                      <i class="fa-solid fa-location-dot icon-info"></i>
+                      <p class="info-text-style">Khan Dangkor, Sangkat Dangkor, Phnom  Penh</p>
+                    </div>
+                    <div class="small-box"></div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- Google Map -->
+    <section>
+      <div class="container googleMapMain">
+        <h1>Our Locations</h1>
+        <iframe
+          class="googleMap"
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3908.7494471561276!2d104.89220822087869!3d11.569810882915624!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3109519fe4077d69%3A0x20138e822e434660!2sRUPP%20(Royal%20University%20of%20Phnom%20Penh)!5e0!3m2!1sen!2skh!4v1699876844109!5m2!1sen!2skh"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </section>
+    <!-- FOOTER FEATURE -->
+    <footer>
+      <div class="footerMain">
+        <div class="footerSub">
+          <div class="frame">
+            <img class="brand-logo" src="./public/images/logo-starbuck.png" />
+            <div class="div">
+              <div class="div-2">
+                <div class="shop"><div class="text-wrapper">Home</div></div>
+                <div class="popular">
+                  <div class="text-wrapper">Popular</div>
+                </div>
+                <div class="our-product">
+                  <div class="text-wrapper">Discount</div>
+                </div>
+                <div class="contact-us">
+                  <div class="text-wrapper">Contact Us</div>
+                </div>
+              </div>
+              <div class="div-3">
+                <img class="img" src="./public/icons/facebook-icon.png" />
+                <img class="img" src="./public/icons/instagram-icon.png" />
+                <img class="img" src="./public/icons/pinterest-icon.png" />
+                <img class="img" src="./public/icons/twitter-icon.png" />
+                <img class="img" src="./public/icons/telegram-icon.png" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-footer">
+        <p class="text-wrapper">
+          Copyright © 2023 StarBuckWeb. All rights reserved.
+        </p>
+      </div>
+    </footer>
+    <!-- import javascript -->
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+    </script>
+    
+  <script src="index.js"></script>
+  </body>
+</html>

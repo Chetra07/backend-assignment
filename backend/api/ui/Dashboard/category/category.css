@@ -1,0 +1,228 @@
+.table_cate {
+  height: 1000px;
+  /* background-color: yellowgreen; */
+  margin-left: 300px;
+  margin-right: 35px;
+
+}
+
+#categoriesTable th tr {
+  align-items: center;
+}
+
+.table_row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  /* Adjust as per your layout */
+}
+
+.table_cell {
+ width: 100%;
+  /* Adjust as per your layout and margin */
+  height: 60px;
+  margin: 0 auto;
+  color: white;
+  /* Adjust the margin as per your layout */
+
+}
+
+.showtb {
+  height: 400px;
+  width: 100%;
+  /* background-color: rgb(224, 224, 255); */
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table th,
+table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+table th {
+  background-color: #f2f2f2;
+}
+
+table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.modal {
+  display: none;
+  /* Initially hide the modal */
+}
+
+.create-button {
+  background-color: red;
+  color: white;
+  padding: 10px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  width: 250px;
+}
+
+.create-button:hover {
+  background-color: darkred;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  max-width: 700px;
+  /* Limiting maximum width */
+  width: 80%;
+  /* Set a percentage width */
+}
+
+.popup-content {
+  text-align: center;
+}
+
+.popup h2 {
+  margin-bottom: 20px;
+  color: #333;
+  /* Setting text color */
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  color: #666;
+  /* Adjusting label color */
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  /* Lighter border color */
+  border-radius: 5px;
+  box-sizing: border-box;
+  /* Ensure padding doesn't increase width */
+  outline: none;
+  /* Removing default focus outline */
+}
+
+/* Button styling */
+.popup button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #007bff;
+  /* Blue button color */
+  color: #fff;
+  /* White text color */
+  transition: background-color 0.3s ease;
+}
+
+.popup button:hover {
+  background-color: #0056b3;
+  /* Darker blue on hover */
+}
+
+
+.butt {
+  width: 70px;
+  height: 35px;
+  /* padding: 10px 20px; */
+  font-size: 16px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.butt:hover {
+  background-color: #0056b3;
+}
+
+
+.edit-button {
+  background-color: #4CAF50;
+  /* Green */
+  border: none;
+  color: white;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.edit-button:hover {
+  background-color: #09580d;
+}
+
+.delete-button {
+  background-color: #f44336;
+  /* Red */
+  border: none;
+  color: white;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.delete-button:hover {
+  background-color: #9d1010;
+}
+
+/* Custom styles for the confirm button */
+.swal2-confirm {
+  background-color: #d9534f;
+  /* Bootstrap danger color */
+  color: #fff;
+  border: 2px solid #d9534f;
+  /* Bootstrap danger color */
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.swal2-cancel {
+  background-color: #6c757d;
+  /* Bootstrap secondary color */
+  color: #fff;
+  border: 2px solid #6c757d;
+  /* Bootstrap secondary color */
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
