@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <link rel="stylesheet" href="product.css" />
     <link rel="stylesheet" href="../category/category.css" />
+    <link rel="stylesheet" href="../">
     <title>Products</title>
 </head>
 
@@ -127,7 +128,12 @@
         </div>
     </aside>
     <div class="table_cate">
-        <div class="table_cell" style="background-color: red;">Profile</div>
+        <div class="table_cell1">
+            <div class="txtmenu" >Product</div>
+            <div class="avatar">
+                <img src="/backend/api/image/profile1.jpg" alt="Profile Picture" class="avatar-img">
+            </div>
+        </div>
         <div class="showtb">
             <div class="popup" id="editPopup">
                 <div class="popup-content" id="editPopup">
@@ -140,6 +146,12 @@
                         <div class="form-group">
                             <label for="newProNameInput">Product Name:</label>
                             <input type="text" id="editProNameInput" placeholder="Enter product name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="newProCatSelect">Category:</label>
+                            <select id="newProCatSelect" required>
+                                <!-- Categories will be populated dynamically -->
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="editProPriceInput">Price:</label>
@@ -157,10 +169,7 @@
                             <label for="editProDisInput">Discount:</label>
                             <input type="text" id="editProDisInput" placeholder="Enter discount" required>
                         </div>
-                        <!-- <div class="form-group">
-                            <label for="newProImgInput">Image:</label>
-                            <input type="file" id="newProImgInput" accept="image/*">
-                        </div> -->
+
                         <button type="submit" id="addSubmitButton">Submit</button>
                     </form>
                     
@@ -169,7 +178,10 @@
             </div>
             
             
-            <div class="create-button" id="createButton">Create New Product</div>
+            <!-- <div class="create-button1" id="createButton">Create New Product</div> -->
+            <button class="create-button1" id="createButton">
+                Create New Product <span class="plus-icon">+</span>
+            </button>
             
                 <div class="popup" id="popup">
                     <div class="popup-content">

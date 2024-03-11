@@ -146,7 +146,7 @@ function fetchProducts() {
                                     <td>${product.pro_dis}</td>
                                     <td><img src="http://localhost/web-assignment-main/backend/api/image/${product.pro_img}" alt="Product Image" style="max-width: 100px;"></td>
                                     <td>
-                                        <button onclick="openAddProductModal(${product.pro_id}, '${product.pro_name}', ${product.cat_id}, ${product.pro_price}, ${product.pro_cal}, '${product.pro_des}', ${product.pro_dis})" class="edit-button">Edit</button>
+                                        <button onclick="openAddProductModal(${product.pro_id}, '${product.pro_name}', ${product.pro_price}, ${product.pro_cal}, '${product.pro_des}', ${product.pro_dis})" class="edit-button">Edit</button>
                                         <button onclick="deleteProduct(${product.pro_id})" class="delete-button">Delete</button>
                                     </td>
                                 `;
@@ -256,14 +256,8 @@ document
         fetchProducts(); // Refresh product list after updating
         closeAddProductModal(); // Close the edit product popup
       });
-    // .catch((error) => {
-    //     console.error("Error updating product:", error);
-    // });
+
   });
-// document.getElementById("closeCreateProduct").addEventListener("click", function () {
-//     alert(1);
-//   document.getElementById("editPopup").style.display = "none";
-// });
 
 document
   .getElementById("closeEditProduct")

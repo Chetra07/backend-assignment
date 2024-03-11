@@ -40,3 +40,11 @@
 #loginform input[type="submit"]:hover {
     background-color: #0056b3;
 }
+.bg {
+    background-color: blue;
+    height: 100vh; /* 100% of the viewport height */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Vertically center the content */
+}
