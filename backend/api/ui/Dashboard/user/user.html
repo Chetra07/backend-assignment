@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <link rel="stylesheet" href="../category/category.css">
     <link rel="stylesheet" href="user.css">
+    <link rel="stylesheet" href="../product/product.css">
     <title>Document</title>
 </head>
 
@@ -129,10 +130,15 @@
             </div>
         </aside>
         <div class="table_cate">
-            <div class="table_cell" style="background-color: red;">User</div>
+            <div class="table_cell1">
+                <div class="txtmenu" >User</div>
+                <div class="avatar">
+                    <img src="/backend/api/image/profile1.jpg" alt="Profile Picture" class="avatar-img">
+                </div>
+            </div>
             <div class="showtb">
                 <!-- Button to open the modal -->
-                <button class="create_ubtn" onclick="openModal()">Create User</button>
+                <button class="create-button1" onclick="openModal()">Create New User <span class="plus-icon">+</span> </button>
 
                 <!-- The Modal -->
                 <div id="userModal" class="modal">

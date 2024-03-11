@@ -54,6 +54,7 @@
     --err: ;
     --eff-7: 47px 12px 109px 0px rgba(0, 0, 0, 0.31);
   }
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -91,8 +92,7 @@ table tr:nth-child(even) {
     border-radius: 10px;
 }
 
-.txtmenu {
-    /* Additional styling for the text menu */
+body {
     margin-right: auto; /* Pushes the text menu to the left */
     font-family: "Poppins-Regular", Helvetica;
     font-size: 19px;
@@ -117,7 +117,7 @@ table tr:nth-child(even) {
     background-color: var(--colors-green-normal-active); /* Green background */
     border: none; /* No border */
     color: white; /* White text color */
-    padding: 12px 17px; /* Padding around the text */
+    padding: 10px 17px; /* Padding around the text */
     text-align: center; /* Center the text */
     text-decoration: none; /* No underlining */
     display: inline-block; /* Display as inline block */
