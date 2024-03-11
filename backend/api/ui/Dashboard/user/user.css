@@ -42,3 +42,27 @@
     background-color: red;
     color: white;
 }
+.pagination {
+    margin-top: 50px;
+    text-align: left; /* Align pagination elements to the left */
+    margin-left: 0px; /* Adjust the left margin as needed */
+}
+
+
+.pagination button {
+    padding: 8px 16px;
+    margin: 0 5px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.pagination button:hover {
+    background-color: #45a049;
+}
+
+.pagination span {
+    margin: 0 5px;
+}

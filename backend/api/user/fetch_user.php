@@ -8,10 +8,22 @@ include "../config/conection.php";
 
 $response = array(); // Initialize an empty array to store the response
 
-$sql = "SELECT * FROM user"; // Assuming 'user' is the name of your user table
+// Set default values for page and limit
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+$limit = isset($_GET['limit']) ? (int)$_GET['limit'] : 10;
+
+// Validate page and limit values
+$page = max(1, $page); // Ensure page number is not less than 1
+$limit = max(1, $limit); // Ensure limit is not less than 1
+
+// Calculate the offset based on the page number and limit
+$offset = ($page - 1) * $limit;
+
+// Query to fetch users with pagination
+$sql = "SELECT * FROM user LIMIT $limit OFFSET $offset";
 $result = $conn->query($sql);
 
-if ($result->num_rows > 0) {
+if ($result) {
     $response['users'] = array(); // Initialize an empty array for users
 
     while ($row = $result->fetch_assoc()) {
@@ -24,8 +36,19 @@ if ($result->num_rows > 0) {
 
         $response['users'][] = $user; // Add user to the response array
     }
+
+    // Query to get total number of users
+    $totalCountQuery = "SELECT COUNT(*) as total FROM user";
+    $totalCountResult = $conn->query($totalCountQuery);
+    $totalCountRow = $totalCountResult->fetch_assoc();
+    $totalUsers = isset($totalCountRow['total']) ? (int)$totalCountRow['total'] : 0;
+
+    // Calculate total number of pages
+    $totalPages = $totalUsers > 0 ? ceil($totalUsers / $limit) : 0;
+
+    $response['totalPages'] = $totalPages; // Add total pages to the response
 } else {
-    $response['message'] = 'No users found';
+    $response['message'] = 'Failed to fetch users';
 }
 
 echo json_encode($response); // Output the response as JSON
