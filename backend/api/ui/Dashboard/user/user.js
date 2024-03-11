@@ -44,7 +44,7 @@ function fetchUsers(page, limit) {
           usersTableBody.innerHTML = "";
   
           // Iterate over the fetched users and create table rows
-          data.sortedUser.forEach((user) => {
+          data.users.forEach((user) => {
             // Create a table row with user details
             const row = document.createElement("tr");
             row.innerHTML = `
