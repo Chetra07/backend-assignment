@@ -35,7 +35,7 @@ if (
     }
 
     // Check file size (limit to 500KB)
-    if ($_FILES['pro_img']['size'] > 500000) {
+    if ($_FILES['pro_img']['size'] > 600000) {
         echo json_encode(['message' => 'File is too large.']);
         exit();
     }

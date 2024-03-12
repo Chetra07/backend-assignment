@@ -440,6 +440,7 @@ form input.search {
 }
 .green-tea-img {
   width: 500px;
+  object-fit: fill;
 }
 .green-tea-img img {
   width: 290px;
