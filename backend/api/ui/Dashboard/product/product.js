@@ -313,6 +313,7 @@ document
         alert(data.message); // Show success message
         fetchProducts(); // Refresh product list after updating
         closeAddProductModal(); // Close the edit product popup
+        window.location.reload();
       });
   });
 

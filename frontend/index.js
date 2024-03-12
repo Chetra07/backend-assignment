@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   const dots = document.querySelectorAll(".dot");
-  dots[0].classList.add("active");
+  // dots[0].classList.add("active");
 
   // Event listeners for navigation buttons
   prevBtn.addEventListener("click", () => goToSlide(index - 1));
@@ -97,13 +97,16 @@ document.addEventListener("DOMContentLoaded", function () {
 fetch("http://localhost/web-assignment-main/backend/api/product/read.php")
   .then((response) => response.json())
   .then((data) => {
-    const products = data.product.filter((product) => product.pro_dis > 0); // Filter products with discount
+    // Filter products with discount and exclude those with category "Slider"
+    const filteredProducts = data.product.filter((product) => {
+      return product.pro_dis > 0 && product.category_name !== "Slider";
+    });
 
     // Reference to the container where product cards will be added
     const productContainer = document.getElementById("productContainer");
 
     // Loop through each product and create HTML for product cards
-    products.forEach((product) => {
+    filteredProducts.forEach((product) => {
       const productCard = `
             <div class="col-sm-12 col-md-4 col-lg-3" style="padding-top: 30px">
                 <div class="product-card">
@@ -115,9 +118,7 @@ fetch("http://localhost/web-assignment-main/backend/api/product/read.php")
                         <i class="far fa-heart like-btn"></i>
                     </div>
                     <a class="product-card-link" href="../frontend/pages/detail-products/detail-product.html">
-                        <img class="cart-image" src="http://localhost/web-assignment-main/backend/api/image/${
-                          product.pro_img
-                        }" alt="${product.pro_name}" />
+                        <img class="cart-image" src="http://localhost/web-assignment-main/backend/api/image/${product.pro_img}" alt="${product.pro_name}" />
                         <h3>${product.pro_name}</h3>
                         <p>${product.pro_cal} Calories</p>
                         <h4>${product.pro_price}$</h4>
@@ -221,38 +222,10 @@ fetch("http://localhost/web-assignment-main/backend/api/product/read.php")
                         </div>
                     `;
       // Append the product card HTML to the container
-      productContainer2.innerHTML += productCard;
+      // productContainer2.innerHTML += productCard;
     });
-  })
-  .catch((error) => console.error("Error fetching products:", error));
+  });
 
-//slider
-
-fetch("http://localhost/web-assignment-main/backend/api/product/fetch_dis.php")
-  .then((response) => response.json())
-  .then((data) => {
-    const sliderContainer = document.querySelector(".slider");
-
-    data.forEach((product) => {
-      const slide = `
-                    <div class="slide">
-                        <div class="text-main-home-page">
-                            <h1>${product.pro_name}</h1>
-                            <h6>${product.pro_cal} Calories</h6>
-                            <p>${product.pro_des}</p>
-                            <a href="./pages/detail-products/detail-product.html" class="btn-buy-now-slide">Buy Now</a>
-                        </div>
-                        <div class="img-main-home-page">
-                            <img src="http://localhost/web-assignment-main/backend/api/image/${product.pro_img}" alt="${product.pro_name}">
-                        </div>
-                    </div>
-                `;
-      sliderContainer.innerHTML += slide;
-    });
-  })
-  .catch((error) => console.error("Error fetching products:", error));
-
-// Fetch data for the slider
 document.addEventListener("DOMContentLoaded", function () {
   const slider = document.querySelector(".slider");
   const dotsContainer = document.querySelector(".slider-dots");
@@ -325,3 +298,97 @@ document.addEventListener("DOMContentLoaded", function () {
     })
     .catch((error) => console.error("Error fetching data:", error));
 });
+
+fetch("http://localhost/web-assignment-main/backend/api/product/fetch_main_pro.php")
+  .then((response) => response.json())
+  .then((data) => {
+    const products = data.product; // Assuming the API response contains a 'product' array
+
+    // Reference to the container where product cards will be added
+    const showmainpro = document.getElementById("showmainpro");
+
+    // Loop through each product and create HTML for product cards
+    products.forEach((product) => {
+      // Calculate the discounted price
+      const discountedPrice = product.pro_price - (product.pro_price * product.pro_dis) / 100;
+
+      const productCard = `
+        <section>
+          <div class="container" style="overflow: hidden">
+            <div class="greenTeaDetail">
+              <div class="green-tea-img">
+                <img src="http://localhost/web-assignment-main/backend/api/image/${product.pro_img}" alt="${product.pro_name}" />
+              </div>
+              <div class="text-green-tea">
+                <div class="text-title">
+                  <h1>${product.pro_name}</h1>
+                  <div class="text-price">
+                    <h3 class="underline-price">${product.pro_price}$</h3>
+                    <h3>${discountedPrice}$</h3> <!-- Display the discounted price -->
+                  </div>
+                </div>
+                <p class="green-tea-text-p">${product.pro_des}</p>
+                <div class="custom-btn-buy-now">
+                  <a href="./pages/detail-products/detail-product.html" class="btn-buy-now-text"> Buy&nbsp;&nbsp;Now </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      `;
+
+      // Append the product card HTML to the container
+      showmainpro.innerHTML += productCard;
+    });
+  })
+  .catch((error) => console.error("Error fetching products:", error));
+
+  fetch("http://localhost/web-assignment-main/backend/api/product/fetch_main_pro1.php")
+  .then((response) => response.json())
+  .then((data) => {
+    const products = data.product; // Assuming the API response contains a 'product' array
+
+    // Reference to the container where product cards will be added
+    const showmainpro1 = document.getElementById("showmainpro1");
+
+    // Loop through each product and create HTML for product cards
+    products.forEach((product, index) => {
+      // Calculate the discounted price
+      const discountedPrice = product.pro_price - (product.pro_price * product.pro_dis) / 100;
+
+      // Determine if the layout should be reverted based on the index
+      const isReverted = index % 2 !== 0;
+      const revertClass = isReverted ? 'revert-green-tea2' : '';
+
+      const productCard = `
+        <section>
+          <section>
+            <div class="container">
+              <div class="greenTeaDetail ${revertClass}">
+                <div class="text-green-tea">
+                  <div class="text-title">
+                    <h1>${product.pro_name}</h1>
+                    <div class="text-price">
+                      <h3 class="underline-price">${product.pro_price}$</h3>
+                      <h3>${discountedPrice}$</h3> <!-- Display the discounted price -->
+                    </div>
+                  </div>
+                  <p class="green-tea-text-p">${product.pro_des}</p>
+                  <div class="custom-btn-buy-now">
+                    <a href="./pages/detail-products/detail-product.html" class="btn-buy-now-text"> Buy&nbsp;&nbsp;Now </a>
+                  </div>
+                </div>
+                <div class="green-tea-img">
+                  <img src="http://localhost/web-assignment-main/backend/api/image/${product.pro_img}" alt="${product.pro_name}" />
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+      `;
+
+      // Append the product card HTML to the container
+      showmainpro1.innerHTML += productCard;
+    });
+  })
+  // .catch((error) => console.error("Error fetching products:", error));
