@@ -19,8 +19,8 @@ $limit = max(1, $limit); // Ensure limit is not less than 1
 // Calculate the offset based on the page number and limit
 $offset = ($page - 1) * $limit;
 
-// Query to fetch users with pagination
-$sql = "SELECT * FROM user LIMIT $limit OFFSET $offset";
+// Query to fetch users with pagination, sorted by ID in descending order
+$sql = "SELECT * FROM user ORDER BY id DESC LIMIT $limit OFFSET $offset";
 $result = $conn->query($sql);
 
 if ($result) {
