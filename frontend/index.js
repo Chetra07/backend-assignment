@@ -153,10 +153,9 @@ fetch(
                                 ${
                                   product.pro_dis > 0
                                     ? `
-                    <div class="discount">
-                        <p class="discount-text">${product.pro_dis}%</p>
-                    </div>
-                `
+                                      <div class="discount">
+                                          <p class="discount-text">${product.pro_dis}%</p>
+                                      </div>              `
                                     : ""
                                 }
                                 <div class="heart-icon">
@@ -198,9 +197,9 @@ fetch("http://localhost/web-assignment-main/backend/api/product/read.php")
                                 ${
                                   product.pro_dis > 0
                                     ? `
-                    <div class="discount">
-                        <p class="discount-text">${product.pro_dis}%</p>
-                    </div>
+                                    <div class="discount">
+                                        <p class="discount-text">${product.pro_dis}%</p>
+                                    </div>
                 `
                                     : ""
                                 }
@@ -221,8 +220,6 @@ fetch("http://localhost/web-assignment-main/backend/api/product/read.php")
                             </div>
                         </div>
                     `;
-      // Append the product card HTML to the container
-      // productContainer2.innerHTML += productCard;
     });
   });
 
@@ -299,7 +296,9 @@ document.addEventListener("DOMContentLoaded", function () {
     .catch((error) => console.error("Error fetching data:", error));
 });
 
-fetch("http://localhost/web-assignment-main/backend/api/product/fetch_main_pro.php")
+fetch(
+  "http://localhost/web-assignment-main/backend/api/product/fetch_main_pro.php"
+)
   .then((response) => response.json())
   .then((data) => {
     const products = data.product; // Assuming the API response contains a 'product' array
@@ -310,7 +309,8 @@ fetch("http://localhost/web-assignment-main/backend/api/product/fetch_main_pro.p
     // Loop through each product and create HTML for product cards
     products.forEach((product) => {
       // Calculate the discounted price
-      const discountedPrice = product.pro_price - (product.pro_price * product.pro_dis) / 100;
+      const discountedPrice =
+        product.pro_price - (product.pro_price * product.pro_dis) / 100;
 
       // Format product prices to two decimal places
       const formattedPrice = parseFloat(product.pro_price).toFixed(2);
@@ -347,8 +347,9 @@ fetch("http://localhost/web-assignment-main/backend/api/product/fetch_main_pro.p
   })
   .catch((error) => console.error("Error fetching products:", error));
 
-
-  fetch("http://localhost/web-assignment-main/backend/api/product/fetch_main_pro1.php")
+fetch(
+  "http://localhost/web-assignment-main/backend/api/product/fetch_main_pro1.php"
+)
   .then((response) => response.json())
   .then((data) => {
     const products = data.product; // Assuming the API response contains a 'product' array
@@ -362,14 +363,15 @@ fetch("http://localhost/web-assignment-main/backend/api/product/fetch_main_pro.p
       const productPrice = parseFloat(product.pro_price);
 
       // Calculate the discounted price
-      const discountedPrice = productPrice - (productPrice * product.pro_dis) / 100;
+      const discountedPrice =
+        productPrice - (productPrice * product.pro_dis) / 100;
 
       // Format the product price to two decimal places
       const formattedPrice = productPrice.toFixed(2);
 
       // Determine if the layout should be reverted based on the index
       const isReverted = index % 2 !== 0;
-      const revertClass = isReverted ? 'revert-green-tea2' : '';
+      const revertClass = isReverted ? "revert-green-tea2" : "";
 
       const productCard = `
         <section>
@@ -381,7 +383,9 @@ fetch("http://localhost/web-assignment-main/backend/api/product/fetch_main_pro.p
                     <h1>${product.pro_name}</h1>
                     <div class="text-price">
                       <h3 class="underline-price">${formattedPrice}$</h3>
-                      <h3>${discountedPrice.toFixed(2)}$</h3> <!-- Display the discounted price -->
+                      <h3>${discountedPrice.toFixed(
+                        2
+                      )}$</h3> <!-- Display the discounted price -->
                     </div>
                   </div>
                   <p class="green-tea-text-p">${product.pro_des}</p>
@@ -390,7 +394,9 @@ fetch("http://localhost/web-assignment-main/backend/api/product/fetch_main_pro.p
                   </div>
                 </div>
                 <div class="green-tea-img">
-                  <img src="http://localhost/web-assignment-main/backend/api/image/${product.pro_img}" alt="${product.pro_name}" />
+                  <img src="http://localhost/web-assignment-main/backend/api/image/${
+                    product.pro_img
+                  }" alt="${product.pro_name}" />
                 </div>
               </div>
             </div>
@@ -398,10 +404,7 @@ fetch("http://localhost/web-assignment-main/backend/api/product/fetch_main_pro.p
         </section>
       `;
 
-      // Append the product card HTML to the container
       showmainpro1.innerHTML += productCard;
     });
   })
   .catch((error) => console.error("Error fetching products:", error));
-
-  // .catch((error) => console.error("Error fetching products:", error));
