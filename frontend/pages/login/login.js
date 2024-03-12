@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Check if login was successful
             if (data.success) {
                 // Redirect the user to the home page
-                window.location.href = "http://127.0.0.1:5502/frontend/index1.html#";
+                window.location.href = "http://127.0.0.1:5502/frontend/pages/Dashboard/index.html";
             } else {
                 // Display an error message or handle the response accordingly
                 alert(data.message);
