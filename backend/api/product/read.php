@@ -8,15 +8,8 @@ include "../config/conection.php";
 
 $response = array(); // Initialize an empty array to store the response
 
-// Set default values for page and limit
-$page = isset($_GET['page']) ? $_GET['page'] : 1;
-$limit = isset($_GET['limit']) ? $_GET['limit'] : 10;
-
-// Calculate the offset based on the page number and limit
-$offset = ($page - 1) * $limit;
-
-// Query to fetch products with pagination
-$sql = "SELECT * FROM product ORDER BY pro_id DESC LIMIT $limit OFFSET $offset";
+// Query to fetch all products without pagination
+$sql = "SELECT * FROM product ORDER BY pro_id DESC";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -37,11 +30,7 @@ if ($result->num_rows > 0) {
         $response['product'][] = $product; // Add product to the response array
     }
 
-    // Calculate total number of pages
-    $totalProducts = $result->num_rows;
-    $totalPages = ceil($totalProducts / $limit);
-
-    $response['totalPages'] = $totalPages; // Add total pages to the response
+    $response['totalProducts'] = $result->num_rows; // Add total products count to the response
 } else {
     $response['message'] = 'No products found';
 }

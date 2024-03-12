@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+  fetchCategory();
   // Add event listeners to all delete buttons
   var deleteButtons = document.querySelectorAll(".delete-button");
   deleteButtons.forEach(function (button) {
@@ -10,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  fetchCategories();
 
   var createButton = document.getElementById("createButton");
   var popup = document.getElementById("popup");
@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
   fetchProducts();
 });
 
-function fetchCategories() {
+function fetchCategory() {
   fetch("http://localhost/web-assignment-main/backend/api/category/read.php")
     .then((response) => response.json())
     .then((data) => {
@@ -112,20 +112,79 @@ function fetchCategories() {
     });
 }
 
+// Fetch categories and products when the page loads
+window.onload = function () {
+  fetchCategories(); // Fetch categories
+  fetchProducts(); // Fetch and display products
+};
+
+// Fetch categories and populate the dropdown menu
+function fetchCategories() {
+  fetch("http://localhost/web-assignment-main/backend/api/category/read.php")
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.categories && data.categories.length > 0) {
+        const categoryDropdown = document.getElementById("categoryDropdown");
+        const uniqueCategories = new Set(); // Initialize a set to store unique category names
+
+        // Iterate over categories and add unique names to the set
+        data.categories.forEach((category) => {
+          uniqueCategories.add(category.cat_name);
+        });
+
+        // Clear existing options in the dropdown
+        categoryDropdown.innerHTML = "";
+
+        // Add "All Categories" option
+        const allCategoriesOption = document.createElement("option");
+        allCategoriesOption.value = "all";
+        allCategoriesOption.textContent = "All Categories";
+        categoryDropdown.appendChild(allCategoriesOption);
+
+        // Add unique category names to the dropdown
+        uniqueCategories.forEach((categoryName) => {
+          const option = document.createElement("option");
+          option.textContent = categoryName;
+          categoryDropdown.appendChild(option);
+        });
+      }
+    })
+    .catch((error) => {
+      console.error("Error fetching categories:", error);
+    });
+}
+
+// Filter products based on the selected category
+function filterProductsByCategory() {
+  const selectedCategory = document.getElementById("categoryDropdown").value;
+  const rows = document.querySelectorAll("#productsTable tbody tr");
+
+  rows.forEach((row) => {
+    const categoryCell = row.cells[2]; // Category cell is the third cell (index 2)
+    const category = categoryCell.textContent.trim(); // Get the category name
+
+    // If the selected category is "all" or the row's category matches the selected category, show the row, else hide it
+    const showRow = selectedCategory === "all" || category === selectedCategory;
+    row.style.display = showRow ? "" : "none";
+  });
+}
+
+// Event listener for category dropdown change
+document
+  .getElementById("categoryDropdown")
+  .addEventListener("change", filterProductsByCategory);
+
+// Function to fetch and display products
+// Function to fetch and display products
 function fetchProducts() {
   fetch("http://localhost/web-assignment-main/backend/api/product/read.php")
     .then((response) => response.json())
     .then((data) => {
-      // Check if data is available and has products
       if (data.product && data.product.length > 0) {
-        // Sort products based on their IDs in descending order
         const sortedProducts = data.product.sort((a, b) => b.pro_id - a.pro_id);
-        // Array to store promises for fetching category names
         const categoryPromises = [];
 
-        // Iterate over sorted products
         sortedProducts.forEach((product) => {
-          // Push the promise to the array
           categoryPromises.push(
             fetch(
               `http://localhost/web-assignment-main/backend/api/category/read_single.php?cat_id=${product.cat_id}`
@@ -134,22 +193,21 @@ function fetchProducts() {
               .then((categoryData) => {
                 const categoryName = categoryData.category.cat_name;
 
-                // Create a table row with product details including the category name
                 const row = document.createElement("tr");
                 row.innerHTML = `
-                                    <td>${product.pro_id}</td>
-                                    <td>${product.pro_name}</td>
-                                    <td>${categoryName}</td>
-                                    <td>${product.pro_price}</td>
-                                    <td>${product.pro_cal}</td>
-                                    <td>${product.pro_des}</td>
-                                    <td>${product.pro_dis}</td>
-                                    <td><img src="http://localhost/web-assignment-main/backend/api/image/${product.pro_img}" alt="Product Image" style="max-width: 100px;"></td>
-                                    <td>
-                                        <button onclick="openAddProductModal(${product.pro_id}, '${product.pro_name}', ${product.pro_price}, ${product.pro_cal}, '${product.pro_des}', ${product.pro_dis})" class="edit-button">Edit</button>
-                                        <button onclick="deleteProduct(${product.pro_id})" class="delete-button">Delete</button>
-                                    </td>
-                                `;
+                  <td>${product.pro_id}</td>
+                  <td>${product.pro_name}</td>
+                  <td>${categoryName}</td>
+                  <td>${product.pro_price}</td>
+                  <td>${product.pro_cal}</td>
+                  <td>${product.pro_des}</td>
+                  <td>${product.pro_dis}</td>
+                  <td><img src="http://localhost/web-assignment-main/backend/api/image/${product.pro_img}" alt="Product Image" style="max-width: 100px;"></td>
+                  <td>
+                    <button onclick="openAddProductModal(${product.pro_id}, '${product.pro_name}', ${product.pro_price}, ${product.pro_cal}, '${product.pro_des}', ${product.pro_dis})" class="edit-button">Edit</button>
+                    <button onclick="deleteProduct(${product.pro_id})" class="delete-button">Delete</button>
+                  </td>
+                `;
                 return row;
               })
               .catch((error) => {
@@ -158,9 +216,7 @@ function fetchProducts() {
           );
         });
 
-        // Wait for all category fetch promises to resolve
         Promise.all(categoryPromises).then((rows) => {
-          // Append rows to the table after all promises are resolved
           const productsTable = document.getElementById("productsTable");
           const tbody = productsTable.getElementsByTagName("tbody")[0];
           tbody.innerHTML = ""; // Clear existing rows
@@ -169,7 +225,6 @@ function fetchProducts() {
           });
         });
       } else {
-        // No products found, display a message
         const productsTable = document.getElementById("productsTable");
         const tbody = productsTable.getElementsByTagName("tbody")[0];
         tbody.innerHTML = `<tr><td colspan="8">${data.message}</td></tr>`;
@@ -193,10 +248,13 @@ function deleteProduct(proId) {
       .then((data) => {
         alert(data.message);
         fetchProducts();
+        window.location.reload();
       })
       .catch((error) => {
         console.error("Error deleting product:", error);
       });
+      
+  
   }
 }
 
@@ -256,7 +314,6 @@ document
         fetchProducts(); // Refresh product list after updating
         closeAddProductModal(); // Close the edit product popup
       });
-
   });
 
 document
@@ -264,7 +321,7 @@ document
   .addEventListener("click", function () {
     document.getElementById("editPopup").style.display = "none";
   });
-  document
+document
   .getElementById("closeEditProduct1")
   .addEventListener("click", function () {
     document.getElementById("popup").style.display = "none";
