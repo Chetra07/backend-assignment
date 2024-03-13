@@ -1,0 +1,93 @@
+:root {
+    --main-font: "Poppins", sans-serif; /* Set your desired font stack */
+    /* --colors-black-normal: #000000c9; Set your desired text color */
+    /* --cc-1: #fff; Set your desired background color */
+    /* --colors-green-dark: #0b7044; */
+    /* --colors-green-light: #e7f1ec; */
+    --cc-1: #fff;
+    --colors-green-light: rgba(231, 241, 236, 1);
+    --colors-green-light-hover: rgba(218, 234, 227, 1);
+    --colors-green-light-active: rgba(179, 211, 197, 1);
+  
+    --colors-green-normal: rgba(11, 112, 68, 1);
+    --colors-green-normal-hover: rgba(10, 101, 61, 1);
+    --colors-green-normal-active: rgba(9, 90, 54, 1);
+  
+    --colors-green-dark: rgba(8, 84, 51, 1);
+    --colors-green-dark-hover: rgba(7, 67, 41, 1);
+    --colors-green-dark-active: rgba(5, 50, 31, 1);
+    --colors-green-darker: rgba(4, 39, 24, 1);
+  
+    --colors-black-light: #e7f1ec;
+    --colors-black-light-hover: rgba(223, 222, 221, 1);
+    --colors-black-light-active: rgba(188, 187, 186, 1);
+  
+    --colors-black-normal: rgba(39, 37, 31, 1);
+    --colors-black-normal-hover: rgba(35, 33, 28, 1);
+    --colors-black-normal-active: rgba(31, 30, 25, 1);
+  
+    --colors-black-dark: rgba(29, 28, 23, 1);
+    --colors-black-dark-hover: rgba(23, 22, 19, 1);
+    --colors-black-dark-active: rgba(18, 17, 14, 1);
+    --colors-black-darker: rgba(14, 13, 11, 1);
+  
+    --colors-white-light: rgba(255, 255, 255, 1);
+    --colors-white-light-active: rgba(255, 255, 255, 1);
+    --colors-white-normal: rgba(255, 255, 255, 1);
+    --colors-white-light-hover: rgba(255, 255, 255, 1);
+    --colors-white-normal-hover: rgba(230, 230, 230, 1);
+    --colors-white-normal-active: rgba(204, 204, 204, 1);
+  
+    --colors-white-dark: rgba(191, 191, 191, 1);
+    --colors-white-dark-hover: rgba(153, 153, 153, 1);
+    --colors-white-dark-active: rgba(115, 115, 115, 1);
+    --colors-white-darker: rgba(89, 89, 89, 1);
+  
+    --colors-card-background: #f7f7f7;
+    --colors-card-hover: #e7f1ec;
+  
+    --eff-1: 0px 4px 20px 0px rgba(11, 112, 68, 0.7);
+    --eff-2: 0px 4px 40px 0px rgba(11, 112, 68, 0.59);
+    --eff-3: 10px 9px 15px 0px rgba(0, 0, 0, 0.1);
+    --eff-4: 0px -7px 25px 0px rgba(0, 0, 0, 0.06);
+    --eff-5: 20px 30px 25px 0px rgba(0, 0, 0, 0.15);
+    --err: ;
+    --eff-7: 47px 12px 109px 0px rgba(0, 0, 0, 0.31);
+  }
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.menu li {
+    margin-right: 20px;
+}
+
+.menu li:last-child {
+    margin-right: 0;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    padding: 10px 15px; /* Add padding to make the clickable area larger */
+    border-radius: 5px; /* Add border-radius for rounded corners */
+}
+
+.menu a:hover {
+    color: var(--colors-green-dark); /* Change color on hover */
+    background-color: #f0f0f0; /* Add background color on hover */
+}
+
+.menu a.active {
+    background-color: var(--colors-green-dark); /* Add background color for active menu item */
+    color: #fff; /* Change text color for active menu item */
+}
+.feature{
+    padding-top: 30px;
+}

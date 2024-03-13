@@ -2,33 +2,23 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
-    <link rel="stylesheet" href="./product/product.css">
-    <link rel="stylesheet" href="./category/category.css">
-    <link rel="stylesheet" href="index.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <!-- Include the ApexCharts library -->
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <!-- Include CSS for ApexCharts -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/apexcharts@5.2.0/dist/apexcharts.min.css">
-    <link rel="stylesheet" type="text/css" href="path/to/apexcharts.min.css">
-
-
-    <title>Dashboard</title>
+    <link rel="stylesheet" href="../../../popular/popular.css" />
+    <link rel="stylesheet" href="../../category/category.css" />
+    <link rel="stylesheet" href="../homepage.css">
+    <link rel="stylesheet" href="../../product/product.css">
+    
+    <title>Products</title>
 </head>
 
 <body>
-    <h1>dashboard</h1>
-
+    <h1>Product</h1>
     <button data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar"
         type="button"
         class="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
@@ -40,14 +30,13 @@
             </path>
         </svg>
     </button>
-
     <aside id="default-sidebar"
         class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
         aria-label="Sidebar">
         <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
             <ul class="space-y-2 font-medium">
                 <li>
-                    <a href="/frontend/pages/Dashboard/index.html"
+                    <a href="../../index.html"
                         class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                         <svg class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
@@ -61,7 +50,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="../Dashboard/product/product1.html"
+                    <a href="../../product/product1.html"
                         class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
@@ -70,10 +59,11 @@
                                 d="M6.143 0H1.857A1.857 1.857 0 0 0 0 1.857v4.286C0 7.169.831 8 1.857 8h4.286A1.857 1.857 0 0 0 8 6.143V1.857A1.857 1.857 0 0 0 6.143 0Zm10 0h-4.286A1.857 1.857 0 0 0 10 1.857v4.286C10 7.169 10.831 8 11.857 8h4.286A1.857 1.857 0 0 0 18 6.143V1.857A1.857 1.857 0 0 0 16.143 0Zm-10 10H1.857A1.857 1.857 0 0 0 0 11.857v4.286C0 17.169.831 18 1.857 18h4.286A1.857 1.857 0 0 0 8 16.143v-4.286A1.857 1.857 0 0 0 6.143 10Zm10 0h-4.286A1.857 1.857 0 0 0 10 11.857v4.286c0 1.026.831 1.857 1.857 1.857h4.286A1.857 1.857 0 0 0 18 16.143v-4.286A1.857 1.857 0 0 0 16.143 10Z" />
                         </svg>
                         <span class="flex-1 ms-3 whitespace-nowrap">Product Management</span>
+
                     </a>
                 </li>
                 <li>
-                    <a href="../Dashboard/user/user.html"
+                    <a href="../../user/user.html"
                         class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
@@ -86,7 +76,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="../Dashboard/category/category.html"
+                    <a href="../../category/category.html"
                         class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
@@ -110,7 +100,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="./homepage/homepage.html"
+                    <a href="http://127.0.0.1:5502/frontend/pages/Dashboard/homepage/homepage.html#"
                         class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 16">
@@ -170,47 +160,127 @@
     </aside>
     <div class="table_cate">
         <div class="table_cell1">
-            <div>Dashboard</div>
+            <div class="txtmenu">HomePage</div>
             <div class="avatar">
                 <img src="/backend/api/image/profile1.jpg" alt="Profile Picture" class="avatar-img">
             </div>
+            
         </div>
+        <div class="feature">
+            <ul class="menu">
+                <li><a href="../homepage.html">Slider</a></li>
+                <li><a href="../Popular Pro/popular_pro.html">Popular Product</a></li>
+                <li><a href="../Discount Pro/discount_pro.html">Discount Product</a></li>
+                <li><a href="../Main Pro1/main_pro1.html">Main Product 1</a></li>
+                <li><a href="./main_pro2.js" class="active" >Main Product 2</a></li>
+            </ul>
+        </div>
+        <div class="showtb">
+            <div class="popup" id="editPopup">
+                <div class="popup-content" id="editPopupContent">
+                    <button class="close-button" id="closeEditProduct">&times;</button>
+                    <h2>Edit Product</h2>
+                    <form id="editProductForm">
+                        <div class="form-group">
+                            <input type="hidden" id="editProIdInput" placeholder="Enter product name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editProNameInput">Product Name:</label>
+                            <input type="text" id="editProNameInput" placeholder="Enter product name" required>
+                        </div>
 
-        <div class="row">
-            <div class="table_cell product_cell">
-                <div class="txtmenu">Products</div>
-                <div class="amount">
-                    <span class="cart-icon">&#128722;</span>
-                    <span class="count" id="productCount">0</span>
+                        <div class="form-group">
+                            <label for="editProPriceInput">Price:</label>
+                            <input type="text" id="editProPriceInput" placeholder="Enter price" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editProCalInput">Calories:</label>
+                            <input type="text" id="editProCalInput" placeholder="Enter calories" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editProDesInput">Description:</label>
+                            <input type="text" id="editProDesInput" placeholder="Enter description" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editProDisInput">Discount:</label>
+                            <input type="text" id="editProDisInput" placeholder="Enter discount" required>
+                        </div>
+                        <button type="submit" id="editSubmitButton">Submit</button>
+                    </form>
                 </div>
             </div>
-            <div class="table_cell user_cell">
-                <div class="txtmenu">Users</div>
-                <div class="amount">
-                    <span class="cart-icon">&#128100;</span>
-                    <span class="count" id="userCount">0</span>
-                </div>
-            </div>
-            <div class="table_cell category_cell">
-                <div class="txtmenu">Categories</div>
-                <div class="amount">
-                    <span class="cart-icon">&#128196;</span>
-                    <span class="count" id="categoryCount">0</span>
-                </div>
-            </div>
-        </div>
-        <div class="chart-container">
-            <div id="pie-chart"></div>
-        </div>
-        <div id="bar-chart"></div>
-       
 
+            <!-- <div class="create-button1" id="createButton">Create New Product</div> -->
+            <button class="create-button1" id="createButton">
+                Create New Main Product 2 <span class="plus-icon">+</span>
+            </button>
+
+            <div class="popup" id="popup">
+                <div class="popup-content">
+                    <button class="close-button" id="closeEditProduct1">&times;</button>
+                    <h2>Create New Product</h2>
+                    <form id="productForm">
+                        <div class="form-group">
+                            <label for="newProNameInput">Product Name:</label>
+                            <input type="text" id="newProNameInput" placeholder="Enter product name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="newProCatSelect">Category:</label>
+                            <select id="newProCatSelect" required>
+                                <!-- Categories will be populated dynamically -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="newProPriceInput">Price:</label>
+                            <input type="text" id="newProPriceInput" placeholder="Enter price" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="newProCalInput">Calories:</label>
+                            <input type="text" id="newProCalInput" placeholder="Enter calories" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="newProDesInput">Description:</label>
+                            <input type="text" id="newProDesInput" placeholder="Enter description" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="newProDisInput">Discount:</label>
+                            <input type="text" id="newProDisInput" placeholder="Enter discount" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="newProImgInput">Image:</label>
+                            <input type="file" id="newProImgInput" accept="image/*">
+                        </div>
+                        <button type="submit" id="submitButton">Submit</button>
+                    </form>
+                </div>
+            </div>
+        
+            <div>
+                <table id="productsTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Category Name</th>
+                            <th>Price</th>
+                            <th>Calories</th>
+                            <th>Description</th>
+                            <th>Discount</th>
+                            <th>Image</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <script src="index.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="main_pro2.js"></script>
 
 
 
