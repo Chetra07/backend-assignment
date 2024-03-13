@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Fetch data from the API
 // fetch('http://localhost/p1/api/product/read.php')
-fetch("http://localhost/web-assignment-main/backend/api/product/read.php")
+fetch("http://localhost/web-assignment-main/backend/api/product/fetch_dis_pro_HP.php")
   .then((response) => response.json())
   .then((data) => {
     // Filter products with discount and exclude those with category "Slider"
