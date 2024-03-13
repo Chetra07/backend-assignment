@@ -9,9 +9,10 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
-    <link rel="stylesheet" href="product.css" />
+    <link rel="stylesheet" href="../../popular/popular.css" />
     <link rel="stylesheet" href="../category/category.css" />
-    <link rel="stylesheet" href="../">
+    <link rel="stylesheet" href="../homepage/homepage.css">
+    <link rel="stylesheet" href="../product/product.css">
     <title>Products</title>
 </head>
 
@@ -28,7 +29,6 @@
             </path>
         </svg>
     </button>
-
     <aside id="default-sidebar"
         class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
         aria-label="Sidebar">
@@ -110,7 +110,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="http://127.0.0.1:5502/frontend/pages/Dashboard/discountpage/dis_slider.html#"
+                    <a href="#"
                         class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
@@ -159,10 +159,17 @@
     </aside>
     <div class="table_cate">
         <div class="table_cell1">
-            <div class="txtmenu">Product</div>
+            <div class="txtmenu">DiscountPage</div>
             <div class="avatar">
                 <img src="/backend/api/image/profile1.jpg" alt="Profile Picture" class="avatar-img">
             </div>
+            
+        </div>
+        <div class="feature">
+            <ul class="menu">
+                <li><a href="./dis_slider.html" class="active">Slider</a></li>
+                <li><a href="../discountpage/All Discount Pro/all_dis_pro.html">All Product Discount</a></li>
+            </ul>
         </div>
         <div class="showtb">
             <div class="popup" id="editPopup">
@@ -199,11 +206,9 @@
                 </div>
             </div>
 
-
-
             <!-- <div class="create-button1" id="createButton">Create New Product</div> -->
             <button class="create-button1" id="createButton">
-                Create New Product <span class="plus-icon">+</span>
+                Create New Slider <span class="plus-icon">+</span>
             </button>
 
             <div class="popup" id="popup">
@@ -245,14 +250,7 @@
                     </form>
                 </div>
             </div>
-            <select id="categoryDropdown">
-                <option value="all">All Categories</option>
-                <!-- Categories will be populated dynamically via JavaScript -->
-            </select>
-
-            
-            
-
+        
             <div>
                 <table id="productsTable">
                     <thead>
@@ -278,7 +276,7 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="product.js"></script>
+    <script src="dis_slider.js"></script>
 
 
 
