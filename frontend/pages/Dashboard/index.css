@@ -110,3 +110,46 @@
     background-color: #E1F0DA; /* Category cell background color */
     color: var(--colors-black-dark);
 }
+#pie-chart {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .chart-container {
+    max-width: 600px;
+    margin: 30px auto;
+   
+    
+  }
+  
+  /* Define custom colors for the pie chart */
+  .pie-color-1 {
+    background-color: #1C64F2;
+  }
+  
+  .pie-color-2 {
+    background-color: #16BDCA;
+  }
+  
+  .pie-color-3 {
+    background-color: #9061F9;
+  }
+  /* Add your custom CSS styles here */
+#bar-chart {
+    width: 100%;
+    height: 400px;
+    margin: 20px auto;
+  }
+  
+  #line-chart {
+    width: 600px;
+    margin: 50px auto;
+  }
+  
+  

@@ -151,6 +151,7 @@ function deleteUser(userId) {
       .then((data) => {
         alert(data.message);
         fetchUsers(); // Assuming you have a function named fetchUsers() to refresh the user list
+        window.location.reload();
       })
       .catch((error) => {
         console.error("Error deleting user:", error);
