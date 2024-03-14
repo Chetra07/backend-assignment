@@ -86,7 +86,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   }
 
-  // Fetch categories when the page loads initially
   fetchCategories();
 });
 // Close create category popup

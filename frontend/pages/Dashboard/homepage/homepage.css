@@ -85,8 +85,8 @@
 }
 
 .menu a.active {
-    background-color: var(--colors-green-dark); /* Add background color for active menu item */
-    color: #fff; /* Change text color for active menu item */
+    background-color: var(--colors-green-light-active); /* Add background color for active menu item */
+    color: #111111; /* Change text color for active menu item */
 }
 .feature{
     padding-top: 30px;
